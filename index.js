@@ -191,16 +191,15 @@ http.createServer(function (req, res) {
 
 
 
-    let i = 0;
+    
+    
     setInterval(() => {
-        if (i == 4) {
-            i = 0;
+        for (let i=0; i<followers.length; i++) {
+            generateStatsForTrader(i, '-1001916629002', false);
         }
-        generateStatsForTrader(i++, '-1001916629002', false);
-    }, 4000)
+    }, 20000)
 
 
     bot.sendMessage('-1001916629002',`Бот запущено`);
-    }).listen(process.env.PORT || 3000);
-});
+}).listen(process.env.PORT || 3000);
 
