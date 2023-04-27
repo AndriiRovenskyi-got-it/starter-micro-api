@@ -1,6 +1,7 @@
 const axios = require('axios');
-
-const TelegramBot = require('node-telegram-bot-api');
+var http = require('http');
+http.createServer(function (req, res) {
+    const TelegramBot = require('node-telegram-bot-api');
 const token = '6210752347:AAFfxP_uPLtbHa3g9MFjTH1Uji9KgYWIpGs';
 
 const bot = new TelegramBot(token, { polling: true });
@@ -200,3 +201,5 @@ setInterval(() => {
 
 
 bot.sendMessage('-1001916629002',`Бот запущено`);
+}).listen(process.env.PORT || 3000);
+
